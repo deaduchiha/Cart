@@ -1,10 +1,16 @@
 import React from "react";
 
+// Context
+import ProductContextProvider from "./context/ProductContextProvider";
+
+// Components
+import Store from "./components/store/Store";
+
 const App = () => {
   return (
-    <div>
-      <span>This is app</span>
-    </div>
+    <ProductContextProvider>
+      <Store />
+    </ProductContextProvider>
   );
 };
 
