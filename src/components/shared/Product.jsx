@@ -6,6 +6,8 @@ import { shortName, isInCart, quantityCount } from "../../helpers/function";
 // Context
 import { CartContext } from "../../context/CartContextProvider";
 
+// Icon
+
 const Product = ({ productData }) => {
   const { state, dispatch } = useContext(CartContext);
   return (
@@ -31,7 +33,7 @@ const Product = ({ productData }) => {
                 dispatch({ type: "REMOVE_ITEM", payload: productData })
               }
             >
-              remove
+              <i class="bi bi-trash3-fill"></i>
             </button>
           )}
           {isInCart(state, productData.id) ? (
