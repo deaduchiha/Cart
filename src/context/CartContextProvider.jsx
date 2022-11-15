@@ -8,6 +8,7 @@ const initialState = {
 };
 
 const cartReducer = (state, action) => {
+  console.log(state);
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
@@ -22,7 +23,7 @@ const cartReducer = (state, action) => {
       };
     case "REMOVE_ITEM":
       const newSelectedItems = state.selectedItems.filter(
-        (item) => item.id !== action.payload
+        (item) => item.id !== action.payload.id
       );
       return {
         ...state,
@@ -64,14 +65,14 @@ const cartReducer = (state, action) => {
   }
 };
 
-export const cartContext = createContext();
+export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  const [state, dispath] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(cartReducer, initialState);
   return (
-    <cartContext.Provider value={{ state, dispath }}>
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
-    </cartContext.Provider>
+    </CartContext.Provider>
   );
 };
 
