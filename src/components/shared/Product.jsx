@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { shortName } from "../helpers/function";
+import { shortName } from "../../helpers/function";
 
 const Product = ({ productData }) => {
   return (
@@ -9,7 +10,7 @@ const Product = ({ productData }) => {
       <h3>{shortName(productData.title)}</h3>
       <p>{productData.price}$</p>
       <div>
-        <a href="#">details</a>
+        <Link to={`/product/${productData.id}`}>Details</Link>
         <button>Add to Cart</button>
       </div>
     </div>
