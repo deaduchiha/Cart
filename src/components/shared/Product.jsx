@@ -33,7 +33,7 @@ const Product = ({ productData }) => {
                 dispatch({ type: "REMOVE_ITEM", payload: productData })
               }
             >
-              <i class="bi bi-trash3-fill"></i>
+              <i className="bi bi-trash3-fill"></i>
             </button>
           )}
           {isInCart(state, productData.id) ? (
