@@ -9,7 +9,7 @@ import CartContextProvider from "./context/CartContextProvider";
 import Store from "./components/store/Store";
 import Details from "./components/details/Details";
 import Navbar from "./components/shared/Navbar";
-import Cart from "./components/cart/Cart";
+import ShopCart from "./components/cart/ShopCart";
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/product" element={<Store />} />
           <Route path="/product/:id" element={<Details />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<ShopCart />} />
           <Route path="/" element={<Navigate to="/product" />} />
         </Routes>
       </CartContextProvider>

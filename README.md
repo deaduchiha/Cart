@@ -8,4 +8,4 @@ axios, react router dom,
 
 # I used:
 
-useContext, useEffect
+useContext, useEffect, api (fakestoreapi)
