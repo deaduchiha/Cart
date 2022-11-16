@@ -11,6 +11,11 @@ import Details from "./components/details/Details";
 import Navbar from "./components/shared/Navbar";
 import ShopCart from "./components/cart/ShopCart";
 
+// Style
+
+import "./styles/App.css";
+import "./styles/font.css";
+
 const App = () => {
   return (
     <ProductContextProvider>

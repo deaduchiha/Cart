@@ -1,0 +1,12 @@
+@font-face {
+  font-family: message;
+  src: url("../assets/fonts/Messenger.otf");
+}
+@font-face {
+  font-family: didot;
+  src: url("../assets/fonts/Didot.ttf");
+}
+@font-face {
+  font-family: Mohave;
+  src: url("../assets/fonts/Mohave.ttf");
+}

@@ -7,17 +7,20 @@ import Cart from "../shared/Cart";
 import { CartContext } from "../../context/CartContextProvider";
 import { Link } from "react-router-dom";
 
+// Styles
+import styles from "./ShopCart.module.css";
+
 const ShopCart = () => {
   const { state, dispatch } = useContext(CartContext);
   return (
-    <div>
-      <div>
+    <div className={styles.container}>
+      <div className={styles.cartContainer}>
         {state.selectedItems.map((item) => (
           <Cart key={item.id} data={item} />
         ))}
       </div>
       {state.itemsCounter > 0 && (
-        <div>
+        <div className={styles.payments}>
           <p>
             <span>Total items: </span>
             {state.itemsCounter}
@@ -26,22 +29,30 @@ const ShopCart = () => {
             <span>Total payments: </span>
             {state.total}
           </p>
-          <div>
-            <button onClick={() => dispatch({ type: "CHECKOUT" })}>
+          <div className={styles.buttonContainer}>
+            <button
+              className={styles.clear}
+              onClick={() => dispatch({ type: "CLEAR" })}
+            >
+              Clear
+            </button>
+            <button
+              className={styles.checkout}
+              onClick={() => dispatch({ type: "CHECKOUT" })}
+            >
               Checkout
             </button>
-            <button onClick={() => dispatch({ type: "CLEAR" })}>Clear</button>
           </div>
         </div>
       )}
       {state.checkout && (
-        <div>
+        <div className={styles.complete}>
           <h3>Chechked out succusfully</h3>
           <Link to="/product">Buy more</Link>
         </div>
       )}
       {!state.checkout && state.itemsCounter === 0 && (
-        <div>
+        <div className={styles.complete}>
           <h3>want to buy?</h3>
           <Link to="/product">Go back to shop</Link>
         </div>
